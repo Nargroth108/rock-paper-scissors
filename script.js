@@ -6,7 +6,7 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random() * choices.length)];
 };
 
-console.log(getComputerChoice());
+                console.log(getComputerChoice());
 
 function playRound(playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
@@ -32,8 +32,15 @@ function playRound(playerSelection, computerSelection) {
     } else {
         return "Typo?"
     }
-}
-const playerSelection = prompt('type').toLowerCase();
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+};
 
+const rock = document.getElementById('rock');
+rock.addEventListener('click', function() {playRound('rock', getComputerChoice())});
+
+const paper = document.getElementById('paper');
+paper.addEventListener('click', function() {playRound('paper', getComputerChoice())});
+
+const scissors = document.getElementById('scissors');
+scissors.addEventListener('click', function() {playRound('scissors', getComputerChoice())});
+
+//buttons.addEventListener('click', function() { playRound(playerSelection, computerSelection)});
