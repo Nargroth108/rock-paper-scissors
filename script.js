@@ -1,5 +1,4 @@
-let playerScore = 0
-let computerScore = 0
+
 
 function getComputerChoice() {
     const choices = ['rock', 'paper', 'scissors'];;
@@ -7,29 +6,32 @@ function getComputerChoice() {
 };
 
 function playRound(playerSelection, computerSelection) {
+    let playerScore = document.querySelector('.playerScore');
+    let computerScore = document.querySelector('.computerScore');
+    let results =  document.querySelector('.results');
     if (playerSelection === computerSelection) {
-        document.querySelector('.results').textContent = "Tie! Play another round"
+        results.textContent = "Tie! Play another round"
     } else if (playerSelection === 'rock' && computerSelection === 'paper') {
-        computerScore++
-        document.querySelector('.results').textContent = `You lost, ${computerSelection} beats ${playerSelection}!`
+        computerScore.textContent = parseInt(computerScore.textContent) + 1;
+        results.textContent = `You lost, ${computerSelection} beats ${playerSelection}!`
     } else if (playerSelection === 'rock' && computerSelection === 'scissors') {
-        playerScore++
-        document.querySelector('.results').textContent = `You won, ${playerSelection} beats ${computerSelection}!`
+        playerScore.textContent = parseInt(playerScore.textContent) + 1;
+        results.textContent = `You won, ${playerSelection} beats ${computerSelection}!`
     } else if (playerSelection === 'paper' && computerSelection === 'rock') {
-        playerScore++
-        document.querySelector('.results').textContent = `You won, ${playerSelection} beats ${computerSelection}!`
+        playerScore.textContent = parseInt(playerScore.textContent) + 1;
+        results.textContent = `You won, ${playerSelection} beats ${computerSelection}!`
     } else if (playerSelection === 'paper' && computerSelection === 'scissors') {
-        computerScore++
-        document.querySelector('.results').textContent = `You lost, ${computerSelection} beats ${playerSelection}!`
+        computerScore.textContent = parseInt(computerScore.textContent) + 1;
+        results.textContent = `You lost, ${computerSelection} beats ${playerSelection}!`
     } else if (playerSelection === 'scissors' && computerSelection === 'rock') {
-        computerScore++
-        document.querySelector('.results').textContent = `You lost, ${computerSelection} beats ${playerSelection}!`
+        computerScore.textContent = parseInt(computerScore.textContent) + 1;
+        results.textContent = `You lost, ${computerSelection} beats ${playerSelection}!`
     } else if (playerSelection === 'scissors' && computerSelection === 'paper') {
-        playerScore++
-        document.querySelector('.results').textContent = `You won, ${playerSelection} beats ${computerSelection}!`
+        playerScore.textContent = parseInt(playerScore.textContent) + 1;
+        results.textContent = `You won, ${playerSelection} beats ${computerSelection}!`
     } else {
-        document.querySelector('.results').textContent = "Typo?"
-    }
+        results.textContent = "Typo?"
+    };
 };
 
 const rock = document.getElementById('rock');
