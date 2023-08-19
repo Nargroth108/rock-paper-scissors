@@ -37,7 +37,7 @@ function playRound(playerSelection, computerSelection) {
             elem.disabled = true;
         });
     } else if (computerScore.textContent === '5') {
-        results.textContent = 'Sadly you lost this game... Good luck next time!';
+        results.textContent = 'Sadly you lost this game... Better luck next time!';
         document.querySelectorAll('button.btn').forEach(elem => {
             elem.disabled = true;
         });
