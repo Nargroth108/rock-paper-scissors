@@ -32,6 +32,18 @@ function playRound(playerSelection, computerSelection) {
     } else {
         results.textContent = "Typo?"
     };
+
+    if (playerScore.textContent === '5') {
+        results.textContent = "Congratulations! You won the game :)";
+        document.querySelectorAll('button.btn').forEach(elem => {
+            elem.disabled = true;
+        });
+    } else if (computerScore.textContent === '5') {
+        results.textContent = 'Sadly you lost this game... Good luck next time!';
+        document.querySelectorAll('button.btn').forEach(elem => {
+            elem.disabled = true;
+        });
+    }
 };
 
 const rock = document.getElementById('rock');
