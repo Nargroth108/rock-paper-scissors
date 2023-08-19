@@ -1,0 +1,19 @@
+.btns {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+};
+
+.btn {
+    display: inline-block;
+    background-color: brown;
+    color: lime;
+    text-align: center;
+    scale: 1.5;
+};
+
+.scores {
+    display: flex;
+    justify-content: center;
+    background-color: blueviolet;
+}
